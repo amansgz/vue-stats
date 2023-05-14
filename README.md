@@ -7,6 +7,4 @@
 + Calculate and Display Statistics.
 + Access Live Public Data with JQuery/Ajax.
 
-[Live demo](https://vue-stats.netlify.app/)
-
-
+[Live demo](https://vue-stats-tgif.netlify.app/)
