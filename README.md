@@ -1,4 +1,4 @@
-# 👩‍💻 Coding Bootcamp 2019
+# 👩‍💻 Coding Bootcamp 
 
 ## 1. Introduction to Javascript Development
 
