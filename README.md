@@ -8,3 +8,4 @@
 + Access Live Public Data with JQuery/Ajax.
 
 [Live demo](https://vue-stats-tgif.netlify.app/)
+![preview screenshot](./img/preview.png)
