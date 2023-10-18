@@ -123,7 +123,7 @@ const app = new Vue({
         template: `
                 <div class="table-responsive tableFixHead">
                     <table class="table table-responsive-sm table-secondary table-striped text-center border border-light">
-                        <thead class= "thead-dark">
+                        <thead class= "table-dark">
                             <tr>
                                 <th>Full Name</th>
                                 <th>{{mayus(field1)}}</th>
@@ -148,7 +148,7 @@ const app = new Vue({
             template: `
                 <table class="table table-responsive-sm table-secondary table-striped text-center border border-light">
                 
-                    <thead class="thead-dark">
+                    <thead class="table-dark">
                         <tr>
                             <th>Party</th>
                             <th>Number of Representants</th>
@@ -175,7 +175,7 @@ const app = new Vue({
                         </tr>
 
                         <tr>
-                            <td class="font-weight-bold">Total</td>
+                            <td class="fw-bold">Total</td>
                             <td>{{obj.totMembers}}</td>
                             <td>{{obj.totVotParty}} %</td>
                         </tr>
