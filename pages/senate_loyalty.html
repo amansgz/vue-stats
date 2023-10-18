@@ -34,6 +34,10 @@
       src="https://kit.fontawesome.com/1fbae0c810.js"
       crossorigin="anonymous"
     ></script>
+    <!-- vue development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- JavaScript -->
+    <script defer src="../javascript/statistics.js"></script>
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
     <title>Senate Party Loyalty</title>
@@ -64,7 +68,7 @@
             <div class="col-md-3 col-lg-2">
               <a class="fs-5 text-decoration-none"
                 href="mailto:info@tgif.net">
-                <i class="fas fa-envelope text-light"></i>
+                <i class="fas fa-envelope"></i>
                 info@tgif.net
               </a>
             </div>
@@ -152,77 +156,80 @@
           <div class="row py-5">
             <div class="col-lg-6 mt-3">
               <h3 class="fs-1 text-uppercase">
-              Party Loyalty
-            </h3>
-            <p>
-              Those who consider themselves to be strong partisans, strong
-              Democrats and strong Republicans respectively, tend to be the most
-              faithful in voting for their party's nominee for office and
-              legislation that backs their party's agenda.
-            </p>
-          </div><!-- end of col -->
+                Party Loyalty
+              </h3>
+              <p>
+                Those who consider themselves to be strong partisans, strong
+                Democrats and strong Republicans respectively, tend to be the most
+                faithful in voting for their party's nominee for office and
+                legislation that backs their party's agenda.
+              </p>
+            </div><!-- end of col -->
 
-          <!-- Senate at a glance Table -->
-          <div class="col-lg-6 mt-4">
-            <h3 class="fs-4 text-uppercase text-end">
-              Senate At A Glance
-            </h3>
-            <template>
-              <at_glance :obj="congress_data"></at_glance>
-            </template>
-          </div><!-- end of col -->
-        </div><!-- end of row -->
-        <!-- end of content/ At a glance table -->
+            <!-- Senate at a glance Table -->
+            <div class="col-lg-6 mt-4">
+              <h3 class="fs-4 text-uppercase text-end">
+                Senate At A Glance
+              </h3>
+              <template>
+                <at_glance :obj="congress_data"></at_glance>
+              </template>
+            </div><!-- end of col -->
+          </div><!-- end of row -->
+          <!-- end of content/ At a glance table -->
 
-        <!-- Divider -->
-        <hr style="height: 1px; background-color: rgb(245, 210, 228)" />
+          <!-- Divider -->
+          <hr>
 
-        <!-- Start of tables -->
-        <div class="row py-5">
-          <!-- Least Loyal Table -->
-          <div class="col-lg-6">
-            <h3 class="fs-4 text-uppercase">
-              Least Loyal 
-              <span class="d-block fs-6"> 
-                (Bottom 10% of Party) 
-              </span>
-            </h3>
-            <template>
-              <stats_table
-                :array="members"
-                field1="total_votes"
-                field2="votes_with_party_pct"
-                :is-ascendent="true">
-              </stats_table>
-            </template>
-          </div>
+          <!-- Start of tables -->
+          <div class="row py-5">
+            <!-- Least Loyal Table -->
+            <div class="col-lg-6">
+              <h3 class="fs-4 text-uppercase">
+                Least Loyal 
+                <span class="d-block fs-6"> 
+                  (Bottom 10% of Party) 
+                </span>
+              </h3>
+              <template>
+                <stats_table
+                  :array="members"
+                  field1="total_votes"
+                  field2="votes_with_party_pct"
+                  :is-ascendent="true">
+                </stats_table>
+              </template>
+            </div><!-- end of col -->
 
-          <!-- Most Loyal Table-->
-          <div class="col-lg-6 mt-4 mt-lg-0">
-            <h3 class="fs-4 text-uppercase">
-              Most Loyal
-              <span  class="d-block fs-6"> 
-                (Top 10% of Party) 
-              </span>
-            </h3>
-            <template>
-              <stats_table
-                :array="members"
-                field1="total_votes"
-                field2="votes_with_party_pct"
-                :is-ascendent="false">
-              </stats_table>
-            </template>
-          </div>
-        </div><!-- end of row -->
-        <!-- end of tables -->
+            <!-- Most Loyal Table-->
+            <div class="col-lg-6 mt-4 mt-lg-0">
+              <h3 class="fs-4 text-uppercase">
+                Most Loyal
+                <span  class="d-block fs-6"> 
+                  (Top 10% of Party) 
+                </span>
+              </h3>
+              <template>
+                <stats_table
+                  :array="members"
+                  field1="total_votes"
+                  field2="votes_with_party_pct"
+                  :is-ascendent="false">
+                </stats_table>
+              </template>
+            </div><!-- end of col -->
+          </div><!-- end of row -->
+          <!-- end of tables -->
+        </section>  
       </main>
 
-      <footer class="row">
-        <div class="col mr-3 ml-3 mt-3 p-2 text-center bg-dark">
-          <small class="text-center text-light"
-            >&copy; 2019 TGIF | All Rights Reserved</small
-          >
+      <footer class="container-fluid bg-dark">
+        <div class="row p-3">
+          <div class="col text-center text-light">
+            <small>
+              &copy; 2019 TGIF | All Rights Reserved
+            </small>
+          </div>
         </div>
       </footer>
     </div>

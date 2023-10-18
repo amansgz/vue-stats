@@ -28,6 +28,10 @@
      src="https://kit.fontawesome.com/1fbae0c810.js"
      crossorigin="anonymous">
      </script>
+     <!-- vue development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- JavaScript -->
+    <script defer src="../javascript/statistics.js"></script>
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
     <title>House Attendance</title>
@@ -58,7 +62,7 @@
             <div class="col-md-3 col-lg-2">
               <a class="fs-5 text-decoration-none"
                 href="mailto:info@tgif.net">
-                <i class="fas fa-envelope text-light"></i>
+                <i class="fas fa-envelope"></i>
                 info@tgif.net
               </a>
             </div>
@@ -168,60 +172,61 @@
               </p>
             </div><!-- end of col -->
 
-          <!-- Table -->
-          <div class="col-lg-6 mt-5">
-            <h3 class="fs-4 text-uppercase text-end">
-              House At A Glance
-            </h3>
-            <template>
-              <at_glance :obj="congress_data"></at_glance>
-            </template>
-          </div><!-- end of col -->
-        </div>
-        <!-- end of content / At a glance table -->
-
-        <!-- Divider -->
-        <hr style="height: 1px; background-color: rgb(245, 210, 228)" />
-
-      <!-- Start of tables -->
-      <div class="row py-5">
-        <!-- Least Engaged Table -->
-        <div class="col-lg-6">
-          <h3 class="fs-4 text-uppercase">
-            Least Engaged
-            <span class="d-block fs-6"> 
-              (Bottom 10% Attendance) 
-            </span>
-          </h3>
-            <template>
-              <stats_table
-                :array="members"
-                field1="missed_votes"
-                field2="missed_votes_pct"
-                :is-ascendent="false">
-              </stats_table>
-            </template>
+            <!-- Table -->
+            <div class="col-lg-6 mt-5">
+              <h3 class="fs-4 text-uppercase text-end">
+                House At A Glance
+              </h3>
+              <template>
+                <at_glance :obj="congress_data"></at_glance>
+              </template>
+            </div><!-- end of col -->
           </div>
+          <!-- end of content / At a glance table -->
 
-          <!-- Most Engaged Table-->
-          <div class="col-lg-6 mt-4 mt-lg-0">
-            <h3 class="fs-4 text-uppercase">
-              Most Engaged
-              <span class="d-block fs-6"> 
-                (Top 10% Attendance) 
-              </span>
-            </h3>
-            <template>
-              <stats_table
-                :array="members"
-                field1="missed_votes"
-                field2="missed_votes_pct"
-                :is-ascendent="true">
-              </stats_table>
-            </template>
+          <!-- Divider -->
+          <hr>
+
+          <!-- Start of tables -->
+          <div class="row py-5">
+            <!-- Least Engaged Table -->
+            <div class="col-lg-6">
+              <h3 class="fs-4 text-uppercase">
+                Least Engaged
+                <span class="d-block fs-6"> 
+                  (Bottom 10% Attendance) 
+                </span>
+              </h3>
+                <template>
+                  <stats_table
+                    :array="members"
+                    field1="missed_votes"
+                    field2="missed_votes_pct"
+                    :is-ascendent="false">
+                  </stats_table>
+                </template>
+            </div>
+
+            <!-- Most Engaged Table-->
+            <div class="col-lg-6 mt-4 mt-lg-0">
+              <h3 class="fs-4 text-uppercase">
+                Most Engaged
+                <span class="d-block fs-6"> 
+                  (Top 10% Attendance) 
+                </span>
+              </h3>
+              <template>
+                <stats_table
+                  :array="members"
+                  field1="missed_votes"
+                  field2="missed_votes_pct"
+                  :is-ascendent="true">
+                </stats_table>
+              </template>
+            </div>
           </div>
-        </div>
-        <!-- end of tables -->
+          <!-- end of tables -->
+        </section>  
       </main>
 
       <footer class="container-fluid bg-dark">
